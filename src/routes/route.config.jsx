@@ -8,8 +8,8 @@ const NotFound = React.lazy(() => import('../pages/notFound'))
 
 function RouteConfig () {
     return (
-        <BrowserRouter>
-            <Suspense fallback={<Loading/>}>
+        <Suspense fallback={<Loading/>}>
+            <BrowserRouter>
                 <Routes>
                     <Route element={<PrivateRoute/>}>
                         <Route path='/dashboard' element={<DashboardPage/>} />
@@ -19,8 +19,8 @@ function RouteConfig () {
                     </Route>
                     <Route path='*' element={<NotFound/>} />
                 </Routes>
-            </Suspense>
-        </BrowserRouter>
+                </BrowserRouter>
+        </Suspense>
     )
 }
 
