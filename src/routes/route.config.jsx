@@ -21,7 +21,7 @@ function Loading() {
 
 function RouteConfig () {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename='/'>
             <Routes>
                 <Route element={<PrivateRoute/>}>
                     <Route path='/dashboard' element={
