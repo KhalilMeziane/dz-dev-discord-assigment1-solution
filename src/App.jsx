@@ -5,8 +5,6 @@ import { Provider } from 'react-redux'
 import { persistor, store } from './store/store'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Font } from './theme/font'
-import { Flex, Text } from '@chakra-ui/react'
-
 
 const theme = extendTheme({
     fonts: {
@@ -15,31 +13,16 @@ const theme = extendTheme({
     }
 })
 
-function Loading() {
-    return (
-        <Flex
-            minH={'100vh'}
-            align={'center'}
-            justify={'center'}
-            bg={'gray.50'}
-        >
-            <Text fontSize={'3xl'}>Loading...</Text>
-        </Flex>
-    )
-}
-
 function App () {
     return (
-		<Suspense fallback={<Loading/>}>
-			<Provider store={store}>
-				<PersistGate loading={null} persistor={persistor}>
-					<ChakraProvider theme={theme}>
-						<Font/>
-						<RouteConfig/>
-					</ChakraProvider>
-				</PersistGate>
-			</Provider>
-		</Suspense>
+		<Provider store={store}>
+			<PersistGate loading={null} persistor={persistor}>
+				<ChakraProvider theme={theme}>
+					<Font/>
+					<RouteConfig/>
+				</ChakraProvider>
+			</PersistGate>
+		</Provider>
     )
 }
 
