@@ -43,7 +43,6 @@ export default function DashboardPage () {
         dispatch(getData(user.token))
     }, [])
     const data = useSelector((state)=> state.data)
-    console.log('data', data)
     return (
         <>
             <Layout title='Dashboard | App' bg={'gray.50'} minH='100vh'>

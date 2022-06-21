@@ -15,16 +15,14 @@ const theme = extendTheme({
 
 function App () {
     return (
-		<React.Suspense fallback={<span>loading....</span>}>
-			<Provider store={store}>
-				<PersistGate loading={null} persistor={persistor}>
-					<ChakraProvider theme={theme}>
-						<Font/>
-						<RouteConfig/>
-					</ChakraProvider>
-				</PersistGate>
-			</Provider>
-		</React.Suspense>
+		<Provider store={store}>
+			<PersistGate loading={null} persistor={persistor}>
+				<ChakraProvider theme={theme}>
+					<Font/>
+					<RouteConfig/>
+				</ChakraProvider>
+			</PersistGate>
+		</Provider>
     )
 }
 
