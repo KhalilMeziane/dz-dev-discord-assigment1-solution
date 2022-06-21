@@ -21,13 +21,13 @@ function Loading() {
 
 function RouteConfig () {
     return (
-        <BrowserRouter basename='/'>
+        <BrowserRouter>
             <Routes>
                 <Route element={<PrivateRoute/>}>
-                    <Route path='/dashboard' element={
+                    <Route exact path='/dashboard' element={
                         <Suspense fallback={<Loading/>}>
                             <DashboardPage/>
-                            </Suspense>
+                        </Suspense>
                     } />
                 </Route>
                 <Route element={<PublicRoute/>}>
